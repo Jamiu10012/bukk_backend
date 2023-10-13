@@ -14,4 +14,11 @@ connection.connect((err) => {
     console.log("Connected to MySQL database");
   }
 });
+
+// Middleware function to attach the MySQL connection to req
+export const dbMiddleware = (req, res, next) => {
+  req.db = connection;
+  next();
+};
+
 export default connection;

@@ -83,14 +83,14 @@ export const login = async (req, res) => {
 
       // Generate a JSON Web Token (JWT) for authentication
       const token = jwt.sign({ userId: user.id }, "your-secret-key");
-
+      const others = user.id;
       //   res.json({ token });
       res
         .cookie("access_token", token, {
           httpOnly: true,
         })
         .status(200)
-        .json({ token });
+        .json({ token, others });
     });
   } catch (error) {
     console.error(error);

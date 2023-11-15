@@ -29,7 +29,7 @@ import {
   createReference,
   getReferenceByUserAndReferenceId,
   updateReferenceByUserAndReferenceId,
-} from "../controllers/resumerEF.js";
+} from "../controllers/resumeRef.js";
 import {
   createProject,
   getProjectByUserAndProjectId,

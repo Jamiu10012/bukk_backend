@@ -25,4 +25,19 @@ app.use("/api/resumeauth", resumeAuthRoutes);
 app.use("/api/resume", resumeRoutes);
 app.use("/api/product", productRoutes);
 
+app.use((request, response, next) => {
+  response.setHeader("Access-Control-Allow-Origin", "*");
+  response.setHeader(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content, Accept, Content-Type"
+  );
+  response.setHeader(
+    "Access-Control-Allow-Methods",
+    "GET, POST, PUT, DELETE, PATCH, OPTIONS"
+  );
+  // response.header('Access-Control-Allow-Credentials', true);
+
+  next();
+});
+
 connection;

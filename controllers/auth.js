@@ -83,7 +83,7 @@ export const login = async (req, res) => {
 
       // Generate a JSON Web Token (JWT) for authentication
       const token = jwt.sign({ userId: user.id }, "your-secret-key");
-      const others = user.id;
+      const others = user;
       console.log(others);
       //   res.json({ token });
       res
